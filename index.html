@@ -27,13 +27,12 @@
 <header class="main-head" id="main" title="">
 
 </header>
+
 <section>
   <div class="container-fluid collum_body">
     <div style="width:100%;">
 
       <form>
-
-
 
         <div  id="smileys">
          <input type="radio" name="smiley" value="sad" class="sad">
@@ -41,11 +40,11 @@
 	         <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
          </div>
          <div id="zones">
-           <input type='checkbox' name='zone' value="kafe" style="content: 'foo'">Зона кафе
-           <input type='checkbox' name='zone' value="zapravka">Услуги Заправщика
+           <input type='checkbox' name='zone' value="kafe">Зона кафе
+           <input type='checkbox' name='zone' value="zapravka">Заправка на улице <br>
            <input type='checkbox' name='zone' value="wc">Уборная
+           <input type='checkbox' name='zone' value="market">Магазин
          </div>
-
 
       <div class="row">
         <textarea name="user" id="user" class="row_input" cols="30" rows="5" required></textarea>
@@ -56,9 +55,16 @@
         <textarea name="message" id="message" class="row_input" cols="30" rows="5" required></textarea>
         <label for="message" class="label">Сообщение</label>
       </div>
+
+      <div id="person">
+         <input type='checkbox'  name="agree" onclick="agreeForm(this.form)">Согласие на обработку персональных данных
+      </div>
+
+
+
       <div class="row">
         <div class="button">
-          <button type="submit">Отправить</button>
+          <button type="submit" name="submit" disabled>Отправить</button>
         </div>
       </div>
 
@@ -76,7 +82,14 @@
 
 </footer>
 
-
+<script>
+  function agreeForm(f) {
+   // Если поставлен флажок, снимаем блокирование кнопки
+   if (f.agree.checked) f.submit.disabled = 0
+   // В противном случае вновь блокируем кнопку
+   else f.submit.disabled = 1
+  }
+ </script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -88,8 +101,6 @@
   ga('send', 'pageview');
 
 </script>
-
-
 
 
   </body>
