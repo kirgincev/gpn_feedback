@@ -11,7 +11,7 @@ body div {
   margin-top: 15px;
   text-align: center;
 }
-form#smileys input[type="radio"] {
+div#smileys input[type="radio"] {
   -webkit-appearance: none;
   width: 90px;
   height: 90px;
@@ -23,23 +23,23 @@ form#smileys input[type="radio"] {
   margin: 0 5px;
   transition: all .2s ease;
 }
-form#smileys input[type="radio"]:hover,
-form#smileys input[type="radio"]:checked {
+div#smileys input[type="radio"]:hover,
+div#smileys input[type="radio"]:checked {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
 }
-form#smileys input[type="radio"]:focus {
+div#smileys input[type="radio"]:focus {
   outline: 0;
 }
-form#smileys input[type="radio"].happy {
+div#smileys input[type="radio"].happy {
   background: url('https://res.cloudinary.com/turdlife/image/upload/v1492864443/happy_ampvnc.svg') center;
   background-size: cover;
 }
-form#smileys input[type="radio"].neutral {
+div#smileys input[type="radio"].neutral {
   background: url('https://res.cloudinary.com/turdlife/image/upload/v1492864443/neutral_t3q8hz.svg') center;
   background-size: cover;
 }
-form#smileys input[type="radio"].sad {
+div#smileys input[type="radio"].sad {
   background: url('https://res.cloudinary.com/turdlife/image/upload/v1492864443/sad_bj1tuj.svg') center;
   background-size: cover;
 }
@@ -58,4 +58,31 @@ form#smileys input[type="radio"].sad {
 }
 .mtt:hover span {
   color: #c0392b;
+}
+
+
+
+
+
+
+
+input[type=radio] {
+  border: 1px solid black;
+  width: 4rem;
+  height: 4rem;
+  -webkit-appearance: button;
+}
+input[type=radio]:checked {
+  background-color: blue;
+  color: white;
+}
+input[type=radio]:focus {
+  outline: 0;
+}
+input[type=radio]:after {
+ 
+  position: relative;
+  text-align: center;
+  display: block;
+  margin-top: 35%;
 }
