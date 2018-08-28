@@ -9,12 +9,16 @@
     <meta name="author" content=" ">
       <link rel="stylesheet" type="text/css" href="style.css" media="screen">
 
+
        <meta property="og:site_name" content=" ">
        <meta property="og:title" content=" ">
        <meta property="og:description" content=" ">
        <meta property="og:image" content=" ">
        <meta property="og:url" content=" ">
        <meta property="og:type" content="website">
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 
 
     </head>
@@ -32,6 +36,24 @@
 	        <input type="radio" name="smiley" value="neutral" class="neutral">
 	         <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
 	          <div>It looks like you're feeling <span id="result">happy</span> today..</div>
+
+
+            <div class="row">
+        <input type="text" id="text" class="row_input" required>
+        <label for="text" class="label">Контактные данные</label>
+      </div>
+
+      <div class="row">
+        <textarea name="message" id="message" class="row_input" cols="30" rows="5" required></textarea>
+        <label for="message" class="label">Сообщение</label>
+      </div>
+      <div class="row">
+        <div class="button">
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+
+
       </form>
 
 
