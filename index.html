@@ -32,7 +32,7 @@
   <div class="container-fluid collum_body">
     <div style="width:100%;">
 
-      <form>
+      <form id="form">
 
         <div  id="smileys">
          <input type="radio" name="smiley" value="sad" class="sad">
@@ -47,20 +47,22 @@
          </div>
 
       <div class="row">
-        <textarea name="user" id="user" class="row_input" cols="30" rows="5" required></textarea>
-        <label for="user" class="label">Ваши данные:</label>
+        <label for="user" class="label">Предпочтительный способ обратной связи:</label><br>
+
+        <input name="user" id="user" class="row_input" cols="30" rows="1" placeholder="Электронная почта/телефон"  maxlength='20' required>
       </div>
 
       <div class="row">
-        <textarea name="message" id="message" class="row_input" cols="30" rows="5" required></textarea>
-        <label for="message" class="label">Сообщение</label>
+        <label for="message" class="label">Сообщение</label><br>
+
+        <textarea name="message" id="message" class="row_input" cols="30" rows="5" placeholder="Текст обращения" maxlength='820'  required></textarea>
+
+
       </div>
 
       <div id="person">
          <input type='checkbox'  name="agree" onclick="agreeForm(this.form)">Согласие на обработку персональных данных
       </div>
-
-
 
       <div class="row">
         <div class="button">
@@ -81,6 +83,25 @@
 <footer class="foot">
 
 </footer>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+$(document).ready(function(){
+// вычисляем первоначальное значение счетчика и его цвет
+var value = $('#form input[name="name"]').attr('value') || '';
+var initLength = Math.max((value ? (50 - value.length) : 50),0);
+$('#name_coun').css('color', 'rgb('+(5*value.length)+', 0, 0)');
+$('#name_coun').html(initLength.toString());
+
+$('#form input[name="name"]').keyup(function(){
+var value = $(this).attr('value') || '';
+var lengthToGo = Math.max((50 - value.length),0);
+$('#name_coun').css('color', 'rgb('+(5*value.length)+', 0, 0)');
+$('#name_coun').html(lengthToGo.toString());
+});
+});
+-->
+</script>
 
 <script>
   function agreeForm(f) {

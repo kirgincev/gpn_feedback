@@ -60,7 +60,9 @@ div#smileys input[type="radio"].sad {
   color: #c0392b;
 }
 
-
+.row>input{
+   width:200px
+}
 
 input[type=checkbox] {
   border: 1px solid black;
