@@ -1,40 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Опрос о состоянии АЗС</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content=" ">
-    <meta name="keywords" content=" ">
-    <meta name="author" content=" ">
-      <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+<head>
+  <meta charset="UTF-8">
+  <title>Опрос о состоянии АЗС</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content=" ">
+  <meta name="keywords" content=" ">
+  <meta name="author" content=" ">
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
 
+  <meta property="og:site_name" content=" ">
+  <meta property="og:title" content=" ">
+  <meta property="og:description" content=" ">
+  <meta property="og:image" content=" ">
+  <meta property="og:url" content=" ">
+  <meta property="og:type" content="website">
 
-       <meta property="og:site_name" content=" ">
-       <meta property="og:title" content=" ">
-       <meta property="og:description" content=" ">
-       <meta property="og:image" content=" ">
-       <meta property="og:url" content=" ">
-       <meta property="og:type" content="website">
+  <script src="js/jquery.min.js"></script>
+</head>
 
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-
-
-    </head>
-  <body>
-
-<header class="main-head" id="main" title="">
-
-</header>
-
+<body>
 <section>
   <div class="container-fluid collum_body">
     <div style="width:100%;">
       <div>
-        <p> Оставьте свое мнение об услугах на текущем АЗС</p>
-
+        <p>Оставьте свое мнение об услугах на текущем АЗС</p>
       </div>
+<<<<<<< HEAD
 
       <form>
 
@@ -72,39 +64,98 @@
       <div class="row">
         <div class="button">
           <button formaction="ok.html" type="submit" name="submit" disabled>Отправить</button>
+=======
+      <form id="feedback-form">
+        <div id="smileys">
+          <input type="radio" name="smiley" value="sad" class="sad">
+          <input type="radio" name="smiley" value="neutral" class="neutral">
+          <input type="radio" name="smiley" value="happy" class="happy">
         </div>
-      </div>
-
-
+        <div id="zones" class="zones">
+          <input type='checkbox' name='zone' value="kafe" style="">Зона кафе
+          <input type='checkbox' name='zone' value="zapravka">Заправка на улице <br>
+          <input type='checkbox' name='zone' value="wc">Уборная
+          <input type='checkbox' name='zone' value="market">Магазин
+        </div>
+        <div class="row">
+          <label for="user" class="label">Предпочтительный способ обратной связи:</label><br>
+          <input name="user" id="user" class="row_input" cols="30" rows="1" placeholder="Электронная почта/телефон"
+                 maxlength='20' required>
+        </div>
+        <div class="row">
+          <label for="message" class="label">Сообщение</label><br>
+          <textarea name="message" id="message" class="row_input" cols="30" rows="5" placeholder="Текст обращения"
+                    maxlength='820' required></textarea>
+        </div>
+        <div id="person">
+          <input type='checkbox' name="agree" onclick="agreeForm(this.form)">Согласие на обработку персональных данных
+        </div>
+        <div class="row">
+          <div class="button">
+            <button id="submit-button" name="submit" disabled>Отправить</button>
+          </div>
+>>>>>>> 3bf93483d37e54ed168ae8d3fc37d55f1e47b07b
+        </div>
       </form>
-
-
     </div>
-
   </div>
 </section>
 
-
-<footer class="foot">
-
-</footer>
-
-
-
 <script>
   function agreeForm(f) {
-   // Если поставлен флажок, снимаем блокирование кнопки
-   if (f.agree.checked) f.submit.disabled = 0
-   // В противном случае вновь блокируем кнопку
-   else f.submit.disabled = 1
+    if (f.agree.checked) {
+      f.submit.disabled = 0
+    } else {
+      f.submit.disabled = 1
+    }
   }
- </script>
+
+  function sendFeedback(form) {
+    var zones = getSelectedElements('zone');
+    if (!form.smiley.value) {
+      alert("Выберите смайл");
+      return false;
+    }
+    if (!Array.isArray(zones) || !zones.length) {
+      alert("Выберите хотя бы одну зону");
+      return false;
+    }
+    console.log(form.message.value);
+    console.log(form.user.value);
+    console.log(form.smiley.value);
+    console.log(zones);
+  }
+
+  function getSelectedElements(name) {
+    var checkboxes = document.getElementsByName(name);
+    var selected = [];
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        selected.push(checkboxes[i].value);
+      }
+    }
+    return selected;
+  }
+
+  $('#feedback-form').submit(function () {
+    var form = document.getElementById("feedback-form");
+    sendFeedback(form);
+    return false;
+  });
+</script>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
   ga('create', 'UA-78079136-1', 'auto');
   ga('send', 'pageview');
@@ -112,5 +163,5 @@
 </script>
 
 
-  </body>
+</body>
 </html>
