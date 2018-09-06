@@ -125,9 +125,10 @@
     };
     console.log(data);
     $.ajax({
-      url: "http::/localhost:8080/client-reviews",
+      url: "http://localhost:8080/client-reviews",
       method: "POST",
-      data: data
+      contentType: 'application/json',
+      data: JSON.stringify(data)
     })
   }
 
