@@ -22,7 +22,7 @@
 
 <body>
 <section>
-  <div style="width:100%;">
+  <div>
     <div>
       <p>Оставьте свое мнение об услугах на текущем АЗС</p>
     </div>
@@ -65,21 +65,20 @@
                 </div>
 
       <div class="row">
-        <label for="contact" class="label">Предпочтительный способ обратной связи:</label><br>
-        <input name="contact" id="contact" class="row_input" onchange="contactChange(this.form)"
+         <input name="contact" id="contact" class="row_input" onchange="contactChange(this.form)"
                placeholder="Электронная почта/телефон" maxlength='20'>
       </div>
       <div class="row">
-        <label for="message" class="label">Сообщение</label><br>
-        <textarea name="message" id="message" class="row_input" cols="30" rows="5" placeholder="Текст обращения"
+         <textarea name="message" id="message" class="row_input" cols="30" rows="5" placeholder="Текст обращения"
                   maxlength='820'></textarea>
       </div>
       <div id="agreement" style="display: none">
-        <input type='checkbox' name="agree" onclick="agreeForm(this.form)">Согласие на обработку персональных данных
+        <input type='checkbox' name="agree" onclick="agreeForm(this.form)" id="checkbox-doc">
+          <label class="custom-control-label" for="checkbox-doc">Согласен с <a href="#" target="_blank">условиями</a> оферты* </label>
       </div>
       <div class="row">
         <div class="button">
-          <button id="submit-button" name="submit">Отправить</button>
+          <button class="btn" id="submit-button" name="submit">Отправить</button>
         </div>
       </div>
     </form>
