@@ -8,6 +8,7 @@
   <meta name="keywords" content=" ">
   <meta name="author" content=" ">
   <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <link rel="stylesheet" href="bootstrap.min.css">
 
   <meta property="og:site_name" content=" ">
   <meta property="og:title" content=" ">
@@ -25,18 +26,44 @@
     <div>
       <p>Оставьте свое мнение об услугах на текущем АЗС</p>
     </div>
-    <form id="feedback-form">
-      <div id="smileys">
-        <input type="radio" name="emotion" value="sad" class="sad">
-        <input type="radio" name="emotion" value="neutral" class="neutral">
-        <input type="radio" name="emotion" value="happy" class="happy">
-      </div>
-      <div id="zones" class="zones">
-        <input type='checkbox' name='zone' value="cafe" style="">Зона кафе
-        <input type='checkbox' name='zone' value="fuel_dispensers">Заправка на улице<br>
-        <input type='checkbox' name='zone' value="toilet">Уборная
-        <input type='checkbox' name='zone' value="trading_hall">Магазин
-      </div>
+      <form id="feedback-form">
+
+
+            <div id="smileys">
+              <input type="radio" name="emotion" value="sad" class="sad">
+              <input type="radio" name="emotion" value="neutral" class="neutral">
+              <input type="radio" name="emotion" value="happy" class="happy">
+            </div>
+            <div class="container">
+              <div id="zones" class="row zones">
+                     <div class="col">
+
+                      <div  class="custom-control custom-checkbox">
+                        <input type='checkbox' name='zone' value="cafe" style="" id="checkbox-cafe">
+                        <label class="custom-control-label" for="checkbox-cafe">Зона кафе</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div  class="custom-control custom-checkbox">
+                        <input type='checkbox' name='zone' value="checkbox-street" id="checkbox-street">
+                        <label class="custom-control-label" for="checkbox-street">Заправка на улице</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div  class="custom-control custom-checkbox">
+                        <input type='checkbox' name='zone' value="toilet" id="checkbox-wc">
+                        <label class="custom-control-label" for="checkbox-wc">Уборная</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div  class="custom-control custom-checkbox">
+                        <input type='checkbox' name='zone' value="trading_hall"  id="checkbox-market">
+                        <label class="custom-control-label" for="checkbox-market">Магазин</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
       <div class="row">
         <label for="contact" class="label">Предпочтительный способ обратной связи:</label><br>
         <input name="contact" id="contact" class="row_input" onchange="contactChange(this.form)"

@@ -64,23 +64,7 @@ div#smileys input[type="radio"].sad {
    width:200px
 }
 
-input[type=checkbox] {
-  border: 1px solid black;
-  width: 1rem;
-  height: 1rem;
-  -webkit-appearance: button;
-}
-input[type=checkbox]:checked {
-  background-color: blue;
-  color: white;
-}
-input[type=checkbox]:focus {
-  outline: 0;
-}
-input[type=checkbox]:after {
-  content: ' ';
-  position: relative;
-  text-align: center;
-  display: block;
-  margin-top: 35%;
+.custom-control>label{
+
+padding: 10px;
 }
